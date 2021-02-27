@@ -1,6 +1,5 @@
 <template>
   <body>
-    <div id="firstview">
       <header id="top-header">
         <div class="flex">
           <h1 class="header-logo">estra inc.</h1>
@@ -16,17 +15,7 @@
           </nav>
         </div>
       </header>
-      <p class="catchcopy">機械ではできない仕事を</p>
-      <div class="news flex">
-        <div class="news-content">
-          <p class="news_date">2019/01/01</p>
-          <p class="news_title">
-            ニュースタイトルがここには入ります。３月の決算報告書
-          </p>
-        </div>
-        <div class="news-icon">news</div>
-      </div>
-    </div>
+
     <div id="hamburger" @click="hamburger()" :class="{'active':isClass}">
       <span></span>
       <span></span>
@@ -99,54 +88,17 @@ export default {
   height: 100%;
 }
 
-#firstview {
-  height: 100vh;
-  background-image: url(../assets/eyecatch.jpg);
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.catchcopy {
-  position: absolute;
-  top: 60%;
-  left: 10%;
-  font-size: 60px;
-  font-style: italic;
-  font-weight: bold;
-  color: #fff;
-  line-height: 1;
-}
-
-/*------------------------*/
-/*         news           */
-/*------------------------*/
-.news {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 50%;
-}
-.news-content {
-  background: #fff;
-  width: 80%;
-  height: 70px;
-}
-
-.news_date {
-  padding-left: 5px;
-}
-
-.news_title {
-  padding: 0 15px;
-}
-.news-icon {
-  background: #000;
-  width: 20%;
-  height: 70px;
-  line-height: 70px;
+.hiden-nav {
+  display: block;
+  width: 100%;
+  height: 100%;
   text-align: center;
-  color: #fff;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 0.2s;
+  background: white;
+  z-index: 100;
 }
 
 
@@ -154,16 +106,7 @@ export default {
   .header-nav {
     display: none;
   }
-  .catchcopy {
-    top: 50%;
-    left: 50%;
-    width: 80%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-  }
-  .news {
-    width: 100%;
-  }
+
   #hamburger {
     width: 40px;
     height: 40px;
@@ -213,18 +156,6 @@ export default {
   background-color: black;
 }
 
-.hiden-nav {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: -100%;
-  transition: 0.2s;
-  background: white;
-  z-index: 100;
-}
 
 .hiden-nav-content{
   margin: 4rem 0;
